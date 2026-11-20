@@ -230,7 +230,7 @@ fun AppSecurityLockScreen(
                     Spacer(modifier = Modifier.height(16.dp))
 
                     Text(
-                        text = "DompetKu Terkunci",
+                        text = "DanaLoka Terkunci",
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.onBackground

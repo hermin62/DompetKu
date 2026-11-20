@@ -363,7 +363,7 @@ fun SettingsScreen(
                                         BiometricHelper.showBiometricPrompt(
                                             activity = act,
                                             title = "Aktifkan Autentikasi Biometrik",
-                                            subtitle = "Verifikasi biometrik Anda untuk mengamankan akses DompetKu",
+                                            subtitle = "Verifikasi biometrik Anda untuk mengamankan akses DanaLoka",
                                             negativeButtonText = "Batal",
                                             onSuccess = { onSetBiometric(true) },
                                             onError = { err -> biometricWarningMsg = err }
@@ -650,7 +650,7 @@ fun SettingsScreen(
                     Icon(imageVector = Icons.Default.Info, contentDescription = null, tint = MaterialTheme.colorScheme.primary)
                     Spacer(modifier = Modifier.width(12.dp))
                     Column {
-                        Text("DompetKu Keuangan v1.0", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Bold)
+                        Text("DanaLoka - Catatan Keuangan & Anggaran v1.0", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Bold)
                         Text(
                             text = "Aman • Offline-First • Terenkripsi • PDF, Excel & CSV",
                             style = MaterialTheme.typography.bodySmall,

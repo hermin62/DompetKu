@@ -1,6 +1,6 @@
 {
-  "name": "DompetKu",
-  "description": "Aplikasi manajemen keuangan pribadi, pencatatan transaksi, anggaran bulanan per kategori, dan grafik arus kas",
+  "name": "DanaLoka",
+  "description": "DanaLoka - Catatan Keuangan & Anggaran pribadi, pencatatan transaksi, anggaran bulanan per kategori, analisis AI, dan grafik arus kas",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

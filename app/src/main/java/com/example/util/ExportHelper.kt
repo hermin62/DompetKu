@@ -198,8 +198,8 @@ object ExportHelper {
 
             if (isFirstPage) {
                 // Title
-                c.drawText("DOMPETKU - LAPORAN KEUANGAN & ARUS KAS", margin, 28f, paintBrandTitle)
-                c.drawText("FINANCIAL STATEMENT & CASH FLOW AUDIT REPORT", margin, 42f, paintBrandSubtitle)
+                c.drawText("DANALOKA - LAPORAN KEUANGAN & ARUS KAS", margin, 28f, paintBrandTitle)
+                c.drawText("CATATAN KEUANGAN & ANGGARAN RESMI", margin, 42f, paintBrandSubtitle)
 
                 // Status Badge on the right
                 val badgeText = "STATUS: TERVERIFIKASI SISTEM"
@@ -209,17 +209,17 @@ object ExportHelper {
                 c.drawRoundRect(badgeRect, 4f, 4f, paintBadgeBg)
                 c.drawText(badgeText, badgeX + 8f, 29f, paintBadge)
 
-                val docRef = "NO. REF: DK-${System.currentTimeMillis().toString().takeLast(8)}"
+                val docRef = "NO. REF: DL-${System.currentTimeMillis().toString().takeLast(8)}"
                 c.drawText(docRef, badgeX, 48f, paintBrandSubtitle)
             } else {
-                c.drawText("DOMPETKU - LAPORAN KEUANGAN ($periodName)", margin, 21f, paintBrandSubtitle)
+                c.drawText("DANALOKA - LAPORAN KEUANGAN ($periodName)", margin, 21f, paintBrandSubtitle)
                 c.drawText("Halaman $pageNumber", pageWidth - margin - 60f, 21f, paintBrandSubtitle)
             }
         }
 
         fun drawFooter(c: Canvas, curPage: Int) {
             c.drawLine(margin, pageHeight - 32f, pageWidth - margin, pageHeight - 32f, paintBorder)
-            c.drawText("Dokumen ini diterbitkan secara otomatis dan terverifikasi oleh Sistem DompetKu.", margin, pageHeight - 20f, paintFooter)
+            c.drawText("Dokumen ini diterbitkan secara otomatis dan terverifikasi oleh Sistem DanaLoka.", margin, pageHeight - 20f, paintFooter)
             c.drawText("Halaman $curPage", pageWidth - margin - 50f, pageHeight - 20f, paintFooter)
         }
 
@@ -530,7 +530,7 @@ object ExportHelper {
         return try {
             val reportsDir = File(context.cacheDir, "reports")
             if (!reportsDir.exists()) reportsDir.mkdirs()
-            val file = File(reportsDir, "Laporan_Keuangan_DompetKu_${System.currentTimeMillis()}.pdf")
+            val file = File(reportsDir, "Laporan_Keuangan_DanaLoka_${System.currentTimeMillis()}.pdf")
             val outputStream = FileOutputStream(file)
             document.writeTo(outputStream)
             outputStream.flush()
@@ -555,7 +555,7 @@ object ExportHelper {
         return try {
             val reportsDir = File(context.cacheDir, "reports")
             if (!reportsDir.exists()) reportsDir.mkdirs()
-            val file = File(reportsDir, "Laporan_Keuangan_DompetKu_${System.currentTimeMillis()}.csv")
+            val file = File(reportsDir, "Laporan_Keuangan_DanaLoka_${System.currentTimeMillis()}.csv")
 
             val csvContent = buildCsvContent(
                 periodName = periodName,
@@ -603,7 +603,7 @@ object ExportHelper {
 
         val sb = StringBuilder()
         // Monthly Summary Block
-        sb.appendLine("\"RINGKASAN LAPORAN KEUANGAN DOMPETKU\"")
+        sb.appendLine("\"RINGKASAN LAPORAN KEUANGAN DANALOKA\"")
         sb.appendLine("\"Periode\",\"${escapeCsv(periodName)}\"")
         sb.appendLine("\"Mata Uang\",\"${escapeCsv(currencyCode)}\"")
         sb.appendLine("\"Jumlah Transaksi\",${transactions.size}")
@@ -659,7 +659,7 @@ object ExportHelper {
         return try {
             val reportsDir = File(context.cacheDir, "reports")
             if (!reportsDir.exists()) reportsDir.mkdirs()
-            val file = File(reportsDir, "Laporan_Keuangan_DompetKu_${System.currentTimeMillis()}.xlsx")
+            val file = File(reportsDir, "Laporan_Keuangan_DanaLoka_${System.currentTimeMillis()}.xlsx")
             FileOutputStream(file).use { output ->
                 writeExcelWorkbookToStream(
                     outputStream = output,
@@ -704,7 +704,7 @@ object ExportHelper {
 
         // Build Sheet 1: Ringkasan Bulanan
         val summaryRows = mutableListOf<List<ExcelCell>>()
-        summaryRows += listOf(ExcelCell.text("LAPORAN KEUANGAN DOMPETKU - RINGKASAN BULANAN", style = 1))
+        summaryRows += listOf(ExcelCell.text("LAPORAN KEUANGAN DANALOKA - RINGKASAN BULANAN", style = 1))
         summaryRows += listOf(ExcelCell.text("Periode Laporan", style = 2), ExcelCell.text(periodName))
         summaryRows += listOf(ExcelCell.text("Tanggal Ekspor", style = 2), ExcelCell.text(exportedAt))
         summaryRows += listOf(ExcelCell.text("Mata Uang", style = 2), ExcelCell.text(currencyCode))
@@ -799,7 +799,7 @@ object ExportHelper {
             .trim('_')
             .take(32)
             .ifBlank { "Laporan" }
-        return "DompetKu_${sanitizedPeriod}.${format.extension}"
+        return "DanaLoka_${sanitizedPeriod}.${format.extension}"
     }
 
     fun saveFileToUri(context: Context, sourceFile: File, targetUri: Uri): Boolean {
@@ -829,7 +829,7 @@ object ExportHelper {
                 type = mimeType
                 putExtra(Intent.EXTRA_STREAM, uri)
                 putExtra(Intent.EXTRA_SUBJECT, title)
-                putExtra(Intent.EXTRA_TEXT, "Laporan Keuangan & Mutasi Kas Resmi dari DompetKu.")
+                putExtra(Intent.EXTRA_TEXT, "Laporan Keuangan & Mutasi Kas Resmi dari DanaLoka - Catatan Keuangan & Anggaran.")
                 addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
             }
 

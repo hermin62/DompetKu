@@ -249,7 +249,7 @@ fun LoginScreen(
                     Box(contentAlignment = Alignment.Center) {
                         Icon(
                             imageVector = Icons.Default.AccountBalanceWallet,
-                            contentDescription = "Logo DompetKu",
+                            contentDescription = "Logo DanaLoka",
                             tint = Color.White,
                             modifier = Modifier.size(38.dp)
                         )
@@ -259,7 +259,7 @@ fun LoginScreen(
                 Spacer(modifier = Modifier.height(16.dp))
 
                 Text(
-                    text = "DompetKu",
+                    text = "DanaLoka",
                     style = MaterialTheme.typography.headlineMedium,
                     fontWeight = FontWeight.ExtraBold,
                     color = Color.White
@@ -268,7 +268,7 @@ fun LoginScreen(
                 Spacer(modifier = Modifier.height(6.dp))
 
                 Text(
-                    text = "Catatan Keuangan Pintar & Database Google Spreadsheet",
+                    text = "Catatan Keuangan & Anggaran",
                     style = MaterialTheme.typography.bodyMedium,
                     color = Color.White.copy(alpha = 0.90f),
                     textAlign = TextAlign.Center
@@ -439,7 +439,7 @@ fun LoginScreen(
                 )
                 Spacer(modifier = Modifier.width(6.dp))
                 Text(
-                    text = "Spreadsheet hanya diakses oleh DompetKu di Google Drive Anda",
+                    text = "Spreadsheet hanya diakses oleh DanaLoka di Google Drive Anda",
                     style = MaterialTheme.typography.labelSmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     textAlign = TextAlign.Center

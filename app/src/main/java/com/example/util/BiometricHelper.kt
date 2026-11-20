@@ -41,7 +41,7 @@ object BiometricHelper {
 
     fun showBiometricPrompt(
         activity: FragmentActivity,
-        title: String = "Autentikasi DompetKu",
+        title: String = "Autentikasi DanaLoka",
         subtitle: String = "Gunakan sidik jari atau biometrik untuk membuka data keuangan",
         negativeButtonText: String = "Gunakan PIN",
         onSuccess: () -> Unit,

@@ -466,7 +466,7 @@ class WeeklyInsightViewModel(application: Application) : AndroidViewModel(applic
         val overBudget = if (metrics.overBudgetCategoryNames.isEmpty()) "Aman" else metrics.overBudgetCategoryNames.joinToString(", ")
 
         return """
-            Analis keuangan DompetKu (Bahasa Indonesia, evaluasi $periodName, tanpa markdown, jangan karang angka).
+            Analis keuangan DanaLoka (Bahasa Indonesia, evaluasi $periodName, tanpa markdown, jangan karang angka).
             Periode ${metrics.periodLabel} ($c):
             Masuk: ${CurrencyHelper.format(metrics.weekIncome, c)} (${metrics.incomeTransactionCount}x)
             Keluar: ${CurrencyHelper.format(metrics.weekExpense, c)} (${metrics.expenseTransactionCount}x), rata2 ${CurrencyHelper.format(metrics.dailyAverageExpense, c)}/hari, tren $trend

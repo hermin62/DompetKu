@@ -298,35 +298,21 @@ fun AddEditTransactionSheet(
 
                             Spacer(modifier = Modifier.width(12.dp))
 
-                            // Category Name & Prompt
-                            Column {
+                            // Category Name & Budget Hint (clean single-line layout without wrapped badge)
+                            Column(
+                                modifier = Modifier
+                                    .weight(1f)
+                                    .padding(end = 8.dp)
+                            ) {
                                 if (currentCat != null) {
-                                    Row(verticalAlignment = Alignment.CenterVertically) {
-                                        Text(
-                                            text = currentCat.name,
-                                            style = MaterialTheme.typography.titleMedium,
-                                            fontWeight = FontWeight.Bold,
-                                            color = MaterialTheme.colorScheme.onSurface,
-                                            maxLines = 1,
-                                            overflow = TextOverflow.Ellipsis
-                                        )
-                                        if (currentCat.type == TransactionType.EXPENSE) {
-                                            Spacer(modifier = Modifier.width(6.dp))
-                                            val isNeeds = currentCat.expenseGroup == ExpenseGroup.NEEDS
-                                            Surface(
-                                                shape = RoundedCornerShape(4.dp),
-                                                color = if (isNeeds) Color(0xFF10B981).copy(alpha = 0.15f) else Color(0xFF8B5CF6).copy(alpha = 0.15f)
-                                            ) {
-                                                Text(
-                                                    text = if (isNeeds) "Kebutuhan" else "Keinginan",
-                                                    fontSize = 9.sp,
-                                                    fontWeight = FontWeight.Bold,
-                                                    color = if (isNeeds) Color(0xFF047857) else Color(0xFF6D28D9),
-                                                    modifier = Modifier.padding(horizontal = 4.dp, vertical = 1.dp)
-                                                )
-                                            }
-                                        }
-                                    }
+                                    Text(
+                                        text = currentCat.name,
+                                        style = MaterialTheme.typography.titleMedium,
+                                        fontWeight = FontWeight.Bold,
+                                        color = MaterialTheme.colorScheme.onSurface,
+                                        maxLines = 1,
+                                        overflow = TextOverflow.Ellipsis
+                                    )
                                     if (currentCat.type == TransactionType.EXPENSE && currentCat.monthlyBudget > 0.0) {
                                         Text(
                                             text = "Batas Anggaran: ${CurrencyHelper.format(currentCat.monthlyBudget, selectedCurrency)}/bln",

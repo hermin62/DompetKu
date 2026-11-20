@@ -1055,7 +1055,7 @@ fun DompetKuApp(
                             context = context,
                             file = generatedFile,
                             mimeType = format.mimeType,
-                            title = "Ekspor Laporan ${format.shortLabel} DompetKu - $periodLabel"
+                            title = "Ekspor Laporan ${format.shortLabel} DanaLoka - $periodLabel"
                         )
                     }
                 } else {

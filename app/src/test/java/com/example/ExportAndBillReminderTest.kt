@@ -95,7 +95,7 @@ class ExportAndBillReminderTest {
             accounts = accounts
         )
 
-        assertTrue(csv.contains("RINGKASAN LAPORAN KEUANGAN DOMPETKU"))
+        assertTrue(csv.contains("RINGKASAN LAPORAN KEUANGAN DANALOKA"))
         assertTrue(csv.contains("\"Total Pengeluaran\",350000.0"))
         assertTrue(csv.contains("\"Bayar WiFi \"\"Utama\"\"\""))
         assertTrue(csv.contains("\"Bank BCA\""))

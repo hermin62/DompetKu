@@ -138,7 +138,7 @@ fun DashboardScreen(
             ) {
                 Column(modifier = Modifier.weight(1f).padding(end = 8.dp)) {
                     Text(
-                        text = "DompetKu",
+                        text = "DanaLoka",
                         style = MaterialTheme.typography.headlineMedium,
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.primary,
@@ -146,7 +146,7 @@ fun DashboardScreen(
                         overflow = TextOverflow.Ellipsis
                     )
                     Text(
-                        text = "Kelola finansial cerdas & hemat",
+                        text = "Catatan Keuangan & Anggaran",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         maxLines = 1,

@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "DompetKu"
+rootProject.name = "DanaLoka"
 include(":app")
